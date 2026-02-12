@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คำร้องทั่วไป</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #1f6f43;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    background: white;
+    color: #1f6f43;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== Section ===== */
+.section {
+    padding: 40px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ===== Card ===== */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ===== Form ===== */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #1f6f43;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #155a34;
+}
+
+.footer {
+    margin-top: 60px;
+    background: #1f6f43;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>E-ทะเบียน | คำร้องทั่วไป</h2>
+    <a href="dashboard.html">กลับหน้าหลัก</a>
+</header>
+
+<div class="section">
+    <div class="card">
+
+        <p><strong>ชื่อ:</strong> นายสมชาย ใจดี</p>
+        <p><strong>รหัสนักศึกษา:</strong> 65001</p>
+
+        <label>ประเภทคำร้อง</label>
+        <select id="petitionType">
+            <option value="">-- เลือกประเภทคำร้อง --</option>
+            <option>ขอใบรับรองการศึกษา</option>
+            <option>ขอเพิ่ม/ถอนรายวิชา</option>
+            <option>ขอผ่อนผันค่าธรรมเนียม</option>
+            <option>อื่น ๆ</option>
+        </select>
+
+        <label>รายละเอียดคำร้อง</label>
+        <textarea id="detail" placeholder="กรอกรายละเอียดคำร้องของท่าน..."></textarea>
+
+        <button onclick="submitPetition()">ส่งคำร้อง</button>
+
+    </div>
+</div>
+
+<div class="footer">
+© 2026 E-ทะเบียน | ระบบต้นแบบเพื่อการศึกษา
+</div>
+
+<script>
+function submitPetition() {
+    const type = document.getElementById("petitionType").value;
+    const detail = document.getElementById("detail").value;
+
+    if(type === "" || detail.trim() === "") {
+        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+    } else {
+        alert("ส่งคำร้องสำเร็จ เจ้าหน้าที่จะดำเนินการภายใน 3 วันทำการ");
+        document.getElementById("petitionType").value = "";
+        document.getElementById("detail").value = "";
+    }
+}
+</script>
+
+</body>
+</html>
