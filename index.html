@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เข้าสู่ระบบ | E-ทะเบียน</title>
+    <meta charset="UTF-8">
+    <title>ระบบทะเบียน</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+        .container {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1f6f4a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #155437;
+        }
+        .links {
+   margin-top: 15px;
+   font-size: 14px;
 }
 
-.container {
-    background: white;
-    padding: 40px;
-    width: 350px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
+.links a {
+   text-decoration: none;
+   color: #2e6f4f;
+   margin: 0 5px;
 }
 
-h2 {
-    margin-bottom: 25px;
-    color: #1f6f43;
+.links a:hover {
+   text-decoration: underline;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background: #1f6f43;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #155a34;
-}
-</style>
+    </style>
 </head>
-
 <body>
 
 <div class="container">
+    <img src="logo.png" alt="โลโก้แอป">
     <h2>เข้าสู่ระบบ</h2>
 
     <form action="dashboard.html">
         <input type="password" placeholder="กรอกรหัสผ่าน" required>
         <button type="submit">เข้าสู่ระบบ</button>
     </form>
+
+    <div class="links">
+        <a href="#">ลืมรหัสผ่าน?</a> |
+        <a href="#">สมัครสมาชิก</a>
+    </div>
 </div>
 
-</body>
-</html>
+
+
+
