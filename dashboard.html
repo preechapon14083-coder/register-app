@@ -4,8 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E-ทะเบียน | หน้าหลัก</title>
+    
 
 <style>
+header {
+    background-color: #1f6f43;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.user-id {
+    opacity: 0.8;
+}
+
+.logout-btn {
+    background-color: white;
+    color: #1f6f43;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #e6e6e6;
+}
 
 body {
     margin: 0;
@@ -99,19 +133,21 @@ body {
 
 </style>
 </head>
+    
 
 <body>
 
 <!-- Navbar -->
-<div class="navbar">
-    <h2>E-ทะเบียน</h2>
-    <div>
-        <a href="#">หน้าหลัก</a>
-        <a href="#">หน่วยงาน</a>
-        <a href="#">ติดต่อ</a>
-        <a href="index.html">ออกจากระบบ</a>
+<header>
+    <div class="logo">E-ทะเบียน</div>
+
+    <div class="user-info">
+        <span>สวัสดี, นายสมชาย ใจดี</span>
+        <span class="user-id">รหัสผู้ใช้: 65001</span>
+        <a href="index.html" class="logout-btn">ออกจากระบบ</a>
     </div>
-</div>
+</header>
+
 
 <!-- Banner -->
 <div class="banner"></div>
@@ -151,3 +187,4 @@ body {
 
 </body>
 </html>
+
