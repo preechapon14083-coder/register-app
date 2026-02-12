@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ลงทะเบียนออนไลน์</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #1f6f43;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header a {
+    background: white;
+    color: #1f6f43;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== Section ===== */
+.section {
+    padding: 40px;
+}
+
+/* ===== Student Info ===== */
+.student-info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #1f6f43;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ===== Footer Box ===== */
+.summary {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background-color: #1f6f43;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #155a34;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>E-ทะเบียน | ลงทะเบียนออนไลน์</h2>
+    <a href="dashboard.html">กลับหน้าหลัก</a>
+</header>
+
+<div class="section">
+
+    <!-- ข้อมูลนักศึกษา -->
+    <div class="student-info">
+        <p><strong>ชื่อ:</strong> นายสมชาย ใจดี</p>
+        <p><strong>รหัสนักศึกษา:</strong> 65001</p>
+        <p><strong>คณะ:</strong> วิทยาศาสตร์</p>
+        <p><strong>ภาคเรียน:</strong> 1/2569</p>
+        <p><strong>หน่วยกิตสูงสุด:</strong> 22 หน่วยกิต</p>
+    </div>
+
+    <!-- ตารางรายวิชา -->
+    <table>
+        <thead>
+            <tr>
+                <th>เลือก</th>
+                <th>รหัสวิชา</th>
+                <th>ชื่อวิชา</th>
+                <th>หน่วยกิต</th>
+                <th>วัน-เวลา</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" value="3" onchange="calculateCredits()"></td>
+                <td>IT101</td>
+                <td>พื้นฐานเทคโนโลยีสารสนเทศ</td>
+                <td>3</td>
+                <td>จันทร์ 09:00-12:00</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="3" onchange="calculateCredits()"></td>
+                <td>IT202</td>
+                <td>การเขียนโปรแกรม</td>
+                <td>3</td>
+                <td>อังคาร 13:00-16:00</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="2" onchange="calculateCredits()"></td>
+                <td>IT303</td>
+                <td>ฐานข้อมูล</td>
+                <td>2</td>
+                <td>พุธ 09:00-11:00</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="3" onchange="calculateCredits()"></td>
+                <td>IT404</td>
+                <td>พัฒนาเว็บแอปพลิเคชัน</td>
+                <td>3</td>
+                <td>ศุกร์ 13:00-16:00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- สรุป -->
+    <div class="summary">
+        <h3>รวมหน่วยกิต: <span id="totalCredits">0</span></h3>
+        <button onclick="confirmRegister()">ยืนยันการลงทะเบียน</button>
+    </div>
+
+</div>
+
+<script>
+function calculateCredits() {
+    let total = 0;
+    let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+
+    checkboxes.forEach(cb => {
+        total += parseInt(cb.value);
+    });
+
+    document.getElementById("totalCredits").innerText = total;
+}
+
+function confirmRegister() {
+    let total = document.getElementById("totalCredits").innerText;
+
+    if(total == 0) {
+        alert("กรุณาเลือกวิชาก่อนลงทะเบียน");
+    } else {
+        alert("ลงทะเบียนสำเร็จ รวม " + total + " หน่วยกิต");
+    }
+}
+</script>
+
+</body>
+</html>
