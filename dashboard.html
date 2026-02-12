@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E-ทะเบียน | หน้าหลัก</title>
-    
 
 <style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* ===== Header ===== */
 header {
     background-color: #1f6f43;
     color: white;
@@ -34,49 +41,17 @@ header {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .logout-btn:hover {
     background-color: #e6e6e6;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-    background-color: #1f6f4a;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar h2 {
-    margin: 0;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-/* ===== Banner ===== */
-.banner {
+/* ===== Hero Banner ===== */
+.hero img {
     width: 100%;
     height: 350px;
-    background: url('banner.jpg') center/cover no-repeat;
+    object-fit: cover;
 }
 
 /* ===== Section ===== */
@@ -90,7 +65,7 @@ body {
     color: #1f6f4a;
 }
 
-/* ===== Service Boxes ===== */
+/* ===== Cards ===== */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -133,14 +108,11 @@ body {
 
 </style>
 </head>
-    
 
 <body>
 
-<!-- Navbar -->
 <header>
     <div class="logo">E-ทะเบียน</div>
-
     <div class="user-info">
         <span>สวัสดี, นายสมชาย ใจดี</span>
         <span class="user-id">รหัสผู้ใช้: 65001</span>
@@ -148,16 +120,14 @@ body {
     </div>
 </header>
 
+<section class="hero">
+    <img src="banner.jpg" alt="E-ทะเบียน Banner">
+</section>
 
-<!-- Banner -->
-<div class="banner"></div>
-
-<!-- Services -->
 <div class="section">
     <h2>การให้บริการ</h2>
 
     <div class="services">
-
         <div class="card">
             <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
             <p>ตรวจสอบข้อมูลทะเบียน</p>
@@ -177,7 +147,6 @@ body {
             <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png">
             <p>ตรวจสอบสถานะ</p>
         </div>
-
     </div>
 </div>
 
@@ -187,4 +156,3 @@ body {
 
 </body>
 </html>
-
