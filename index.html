@@ -46,21 +46,21 @@
         button:hover {
             background-color: #155437;
         }
+
         .links {
-   margin-top: 15px;
-   font-size: 14px;
-}
+            margin-top: 15px;
+            font-size: 14px;
+        }
 
-.links a {
-   text-decoration: none;
-   color: #2e6f4f;
-   margin: 0 5px;
-}
+        .links a {
+            text-decoration: none;
+            color: #2e6f4f;
+            margin: 0 5px;
+        }
 
-.links a:hover {
-   text-decoration: underline;
-}
-
+        .links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -69,8 +69,10 @@
     <img src="logo.png" alt="โลโก้แอป">
     <h2>เข้าสู่ระบบ</h2>
 
-    <form action="dashboard.html">
-        <input type="password" placeholder="กรอกรหัสผ่าน" required>
+    <!-- ลบ action ออก -->
+    <form onsubmit="login(event)">
+        <input type="text" id="studentId" placeholder="รหัสนักศึกษา" required>
+        <input type="password" id="password" placeholder="รหัสผ่าน" required>
         <button type="submit">เข้าสู่ระบบ</button>
     </form>
 
@@ -80,6 +82,24 @@
     </div>
 </div>
 
+<script>
+function login(event) {
+    event.preventDefault(); // ป้องกัน form รีเฟรชหน้า
 
+    const studentId = document.getElementById("studentId").value;
+    const password = document.getElementById("password").value;
 
+    const validId = "65001";
+    const validPassword = "1234";
 
+    if(studentId === validId && password === validPassword) {
+        localStorage.setItem("studentId", studentId);
+        window.location.href = "dashboard.html";
+    } else {
+        alert("รหัสนักศึกษาหรือรหัสผ่านไม่ถูกต้อง");
+    }
+}
+</script>
+
+</body>
+</html>
