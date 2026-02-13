@@ -6,6 +6,44 @@
 <title>กำลังปรับปรุง</title>
 
 <style>
+    body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    font-family: Arial;
+}
+
+.gif-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.gif-row img {
+    width: 150px;
+}
+
+.content {
+    text-align: center;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #1f6f4a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #155437;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -78,14 +116,16 @@ p {
 
 <body>
 
-<div class="container">
-    <h1>🚧 กำลังปรับปรุงระบบ 🚧</h1>
-    <p>ขออภัยในความไม่สะดวก กรุณาเข้าใช้งานภายหลัง</p>
-
-    <div class="gif-row">
-        <img src="dance1.gif" alt="gif1">
-        <img src="dance1.gif" alt="gif2">
+<div class="gif-row">
+    <img src="dance.gif" alt="gif">
+    <div class="content">
+        <h2>🚧 กำลังปรับปรุง 🚧</h2>
+        <button onclick="window.location.href='index.html'">
+            กลับหน้าล็อกอิน
+        </button>
     </div>
+    <img src="dance.gif" alt="gif">
+</div>
 
     <button onclick="goBack()">ย้อนกลับไปหน้าเข้าสู่ระบบ</button>
 </div>
