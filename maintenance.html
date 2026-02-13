@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กำลังปรับปรุง</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1f6f43, #2e8b57);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* กล่องหลัก */
+.container {
+    background: rgba(255,255,255,0.12);
+    padding: 50px 60px;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* GIF เรียงกลาง */
+.gif-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 25px 0;
+}
+
+.gif-row img {
+    width: 130px;
+}
+
+/* ปุ่ม */
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #1f6f43;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e6e6e6;
+    transform: scale(1.05);
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🚧 กำลังปรับปรุงระบบ 🚧</h1>
+    <p>ขออภัยในความไม่สะดวก กรุณาเข้าใช้งานภายหลัง</p>
+
+    <div class="gif-row">
+        <img src="dance1.gif" alt="gif1">
+        <img src="dance2.gif" alt="gif2">
+    </div>
+
+    <button onclick="goBack()">ย้อนกลับไปหน้าเข้าสู่ระบบ</button>
+</div>
+
+<script>
+function goBack() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
